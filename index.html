@@ -2,9 +2,13 @@
 <html>
     <head>
         <title>
-            Home-AM
+            Iced-code
         </title>
         <style>
+            body::-webkit-scrollbar, body::-webkit-scrollbar-button {
+                display: none; 
+            }
+
             body {
                 background-color:rgb(0, 2, 20);
                 font-family:Verdana, Geneva, Tahoma, sans-serif; /*'Courier New', Courier, monospace;*/
@@ -14,15 +18,23 @@
             }
 
             p {
-                font-size: 1.2rem;
+                font-size: 2rem;
+                transition-duration: 1s;
             }
 
             a, a:visited {
                 text-decoration: none;
                 color: white;
+
+                transition-duration: 0.5s;
             }
             a:hover {
+                color: rgb(227, 45, 119);
+                transition-duration: 0.8s;
+
                 text-decoration: underline;
+                text-decoration-color: rgb(227, 45, 119);
+                text-underline-offset: 0.5rem;
             }
         </style>
     </head>
@@ -32,7 +44,7 @@
 
         </div>
 
-        <img src="https://avatars.githubusercontent.com/u/86176543?v=4">
+        <a href="https://github.com/Iced-code" target="_self"><img src="https://avatars.githubusercontent.com/u/86176543?v=4"></a>
 
         <script>
             async function getRepos() {
@@ -50,7 +62,7 @@
                     if(repo.description){
                         desc = `: ${repo.description}`;
                     }
-                    repoEl.innerHTML = `<p><a href="${repo.html_url}" target=_blank>${repo.name}${desc}</a></p>`;
+                    repoEl.innerHTML = `<p><a href="${repo.html_url}" target=_blank> ${repo.name}<small>${desc}</small></a></p>`;
                     
                     repoContainer.appendChild(repoEl);
                 });
