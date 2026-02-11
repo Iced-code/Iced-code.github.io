@@ -70,7 +70,7 @@
                     if(repo.description){
                         desc = `: ${repo.description}`;
                     }
-                    repoEl.innerHTML = `<p><a href="${repo.html_url}" target=_blank> ${repo.name}<small>${desc}</small></a></p>`;
+                    repoEl.innerHTML = `<p><a href="${repo.html_url}"> ${repo.name}<small>${desc}</small></a></p>`;
                     
                     repoContainer.appendChild(repoEl);
                 });
